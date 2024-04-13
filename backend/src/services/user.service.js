@@ -20,7 +20,7 @@ dotenv.config();
 class UserService {
     static sendEmail(email, uniqueString, emailType) {
         var transport = nodemailer.createTransport({
-            //service: process.env.EMAIL_SERVICE,
+            service: process.env.EMAIL_SERVICE,
             host: process.env.EMAIL_HOST,
             port: Number(process.env.EMAIL_PORT),
             auth: {
@@ -246,6 +246,7 @@ class UserService {
         }
         rawData.password = await this.hashPassword(rawData.password);
         let checker = await UserModel.findOne({email:rawData.email});
+        console.log('checker', checker);
         if (checker) {
             return {response:false, message:"This Email already in use", data:null}
         }
