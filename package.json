@@ -47,7 +47,8 @@
     "server": "cd backend & npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "craco build"
   },
   "eslintConfig": {
     "extends": [
