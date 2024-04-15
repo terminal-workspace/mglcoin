@@ -21,6 +21,7 @@ import openNotification from "../helpers/notification";
 import WalletLoadingModal from "../component/WalletComponents/WalletLoadingModal";
 import {SERVER_URL, networks} from "../../constants/env";
 import {getTokenBaseInfo, getTokenBalance, getTokenPriceInUsd} from "../../utils/tokenUtils";
+import Web3Wrapper from '../component/web3-wallet/web3-wallet';
 
 const { Paragraph } = Typography;
 const initTokenList=[
@@ -235,6 +236,7 @@ function Wallet() {
                     </Col>
                     <Col span={14}>
                       <Paragraph copyable className="myColor1 font-bold ">{publicKey}</Paragraph>
+                      <Web3Wrapper />
                     </Col>
                   </Row>
 
